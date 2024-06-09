@@ -1,26 +1,20 @@
 Rails.application.routes.draw do
   
+  scope module: :public do
+    root to: 'homes#top'
+    get 'about' => 'homes#about'
+    get 'ideal' => 'homes#ideal'
+    resources :users, only: [:show, :edit, :update]
+    resources :foods, only: [:new, :index, :show, :edit, :create, :update, :destroy]
+  end
   
-  namespace :admin do
-    get 'users/index'
-    get 'users/show'
-    get 'users/edit'
+  amespace :admin do
+    root to: 'homes#top'
+    resources :foods, only: [:index, :show, :destroy]
+    resources :users, only: [:index, :show, :edit, :update]
   end
-  namespace :admin do
-    get 'foods/index'
-    get 'foods/show'
-  end
-  namespace :admin do
-    get 'genres/index'
-  end
-  namespace :public do
-    get 'rooms/index'
-    get 'rooms/show'
-  end
-  namespace :public do
-    get 'relationships/followers'
-    get 'relationships/followings'
-  end
+
+
   devise_for :user, skip: [:passwords], controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
