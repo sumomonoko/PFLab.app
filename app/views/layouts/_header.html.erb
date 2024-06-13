@@ -1,0 +1,58 @@
+<header>
+  <nav class = "navbar navbar-expand-lg navbar-dark">
+    <div class = "container">
+      <a class = "col-3 navbar-brand mt-2" href = "/">
+        <%= image_tag asset_path("saitologo.png"), class:"img" %>
+      </a>
+      <button class = "navbar-toggler collapsed" type = "button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class = "navbar-toggler-icon"></span>
+      </button>
+      <div class = "collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class = "navbar-nav ml-auto">
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to "ホーム", foods_path, class: 'btn btn-block rounded btn-user' %>
+            </li>
+            <li>
+              <%= link_to "理想の食事", ideal_path, class: 'btn btn-block rounded btn-user' %>
+            </li>
+            <li>
+              <% if current_user.email != 'guest@example.com' %>
+                <%= link_to "投稿フォーム", new_food_path, class: 'btn btn-block rounded btn-user' %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "ログアウト", destroy_user_session_path, class: 'btn btn-block rounded btn-user', method: :delete %>
+            </li>
+          <% elsif admin_signed_in? %>
+            <li>
+              <%= link_to "投稿一覧", admin_foods_path, class: 'btn btn-block rounded btn-admin' %>
+            </li>
+            <li>
+              <%= link_to "ジャンル一覧", admin_genres_path, class: 'btn btn-block rounded btn-admin' %>
+            </li>
+            <li>
+              <%= link_to "会員一覧", admin_users_path, class: 'btn btn-block rounded btn-admin' %>
+            </li>
+            <li>
+              <%= link_to "ログアウト", destroy_admin_session_path, class: 'btn btn-block rounded btn-admin', method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "ご案内", about_path, class: 'btn btn-block rounded btn-user rounded-pill' %>
+            </li>
+            <li>
+              <%= link_to "新規登録", new_user_registration_path, class: 'btn btn-block rounded btn-user rounded-pill' %>
+            </li>
+            <li>
+              <%= link_to "ログイン", new_user_session_path, class: 'btn btn-block rounded btn-user rounded-pill' %>
+            </li>
+            <li>
+              <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: 'btn btn-block rounded btn-user rounded-pill' %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
