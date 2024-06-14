@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :relationships, only: [:followed, :follower, :create, :destroy]
   end
 
-  amespace :admin do
+  namespace :admin do
     root to: 'homes#top'
     resources :foods, only: [:index, :show, :destroy]
     resources :users, only: [:index, :show, :edit, :update]
