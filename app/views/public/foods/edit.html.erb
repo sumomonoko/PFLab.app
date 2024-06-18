@@ -1,2 +1,45 @@
-<h1>Public::Foods#edit</h1>
-<p>Find me in app/views/public/foods/edit.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div id="error_explanation">
+    <%= render 'layouts/error_messages', obj: @food %>
+  </div>
+</div>
+
+<div class="container">
+  <div class = "row" >
+    <div class = "col" >
+      <h3 class="float-left font-weight-bold px-3 my-3 rounded-pill">投稿編集</h3>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "offset-2 float-center col-6">
+      <%= form_with model: @food, url: food_path, local: true do |f| %>
+        <table class="table table-borderless">
+          <tr>
+            <th>テーマ</th>
+            <td><%= f.text_field :title, size: "40x5" %></td>
+          </tr>
+          <tr>
+            <th>食事写真</th>
+            <td><%= f.file_field :food_image, accept: "image/*", size: "40x5" %></td>
+          </tr>
+          <tr>
+            <th>ジャンル</th>
+            <td><%= f.collection_select :genre_id, Genre.all, :id, :name, prompt: "--選択してください--" %></td>
+          </tr>
+          <tr>
+            <th>献立</th>
+            <td><%= f.text_area :menu, size: "40x7" %></td>
+          </tr>
+          <tr>
+            <th>アピールポイント</th>
+            <td><%= f.text_area :point, size: "40x6" %></td>
+          </tr>
+        </table>
+        <div class="row">
+          <%= f.submit '変更を保存', class: 'btn btn-success mx-auto rounded px-4 my-4' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to "my投稿一覧に戻る", food_path(@food), class: 'btn btn-secondary mt-5' %>
+</div>
