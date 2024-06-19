@@ -9,7 +9,7 @@ class Public::FoodsController < ApplicationController
   def index
     @foods = Food.all
     @user = current_user
-    
+    @genres = Genre.all
   end
 
   def show
