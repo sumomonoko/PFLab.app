@@ -1,0 +1,30 @@
+<table class="table table-borderless">
+  <tr>
+    <td>
+      <%= link_to user_path(current_user) do %>
+        <%= image_tag current_user.get_image(90, 90), class: 'rounded-circle' %>
+        <%= current_user.name %>
+      <% end %>
+    </td>
+  </tr>
+</table>
+<div class="genre_search">
+  <table class="table table-bordered">
+    <tr>
+      <th class="text-center">ジャンル検索</th>
+    </tr>
+    <%= form_with url: genre_search_path, method: :get do |f| %>
+      <% genres.each do |genre| %>
+        <tr>
+          <td><%= link_to genre.name, genre_search_path(genre_id: genre.id), method: :get %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
+
+<div class = "row" >
+  <% if current_user.email != 'guest@example.com' %>
+    <%= link_to "投稿する", new_food_path, class: 'btn btn-outline-secondary btn-block' %>
+  <% end %>
+</div>

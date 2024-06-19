@@ -1,2 +1,41 @@
-<h1>Admin::Foods#show</h1>
-<p>Find me in app/views/admin/foods/show.html.erb</p>
+<div class="container">
+  <div class = "row" >
+    <div class = "col-3 px-5 my-5 mx-auto" >
+      <%= image_tag @food.get_food_image(200,200) %>
+      <p>
+        <%= link_to admin_user_path(@user) do %>
+          <%= image_tag @user.get_image(100, 70), class: 'rounded-circle' %>
+          <%= @user.name %>
+        <% end %>
+      </p>
+      <p><%= @food.created_at.strftime('%Y年%m月%d日') %></p>
+    </div>
+    <div class="col-7">
+      <table class="table table-borderless text-left">
+        <tr class="col-12">
+          <th class="col-4">テーマ</th>
+          <td><%= @food.title %></td>
+        </tr>
+        <tr>
+          <th>ジャンル</th>
+          <td><%= @food.genre.name %></td>
+        </tr>
+        <tr>
+          <th>献立</th>
+          <td><%= @food.menu %></td>
+        </tr>
+        <tr>
+          <th>アピールポイント</th>
+          <td><%= @food.point %></td>
+        </tr>
+        <tr>
+          <td><%= link_to "削除する", admin_food_path(@food.id), method: :delete, "data-confirm" => "本当に消しますか?", class: 'btn btn-sm btn-danger' %></td>
+        </tr>
+      </table>
+      <div id="comment_index_<%= @food.id %>">
+        <%= render "admin/comments/index", food: @food %>
+      </div>
+    </div>
+  </div>
+  <%= link_to "投稿一覧に戻る", admin_foods_path, class: 'btn btn-secondary mt-5' %>
+</div>
