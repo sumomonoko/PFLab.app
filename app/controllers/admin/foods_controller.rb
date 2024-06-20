@@ -2,7 +2,7 @@ class Admin::FoodsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @foods = Food.page(params[:page]).per(15).order(created_at: :desc)
+    @foods = Food.all
     @genres = Genre.all
   end
 
