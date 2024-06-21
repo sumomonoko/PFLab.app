@@ -1,2 +1,48 @@
-<h1>Public::Users#show</h1>
-<p>Find me in app/views/public/users/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 side-view">
+      <% if current_user == @user %>
+        <h4>マイページ</h4>
+      <% else %>
+        <h4><%= @user.name %>さんのマイページ</h4>
+      <% end %>
+
+      <%= image_tag @user.get_image(150,150), class: 'rounded-circle' %>
+      <div id="user_introduction">
+        <%= render 'public/users/self_introduction', user: @user %>
+      </div>
+    </div>
+    <div class="col-md-8 offset-md-1">
+      <h3>投稿一覧</h3>
+      <% @foods.each do |food| %>
+        <%= link_to food_path(food) do %>
+          <table class="table table-borderless border">
+            <tr class="col-md-12">
+              <td><%= image_tag food.get_food_image(150,150) %></td>
+            </tr>
+            <tr class="col-md-12">
+              <th class="col-md-3">テーマ</th>
+              <td><%= food.title %></td>
+            </tr>
+            <tr>
+              <th>ジャンル</th>
+              <td><%= food.genre.name %></td>
+            </tr>
+            <tr>
+              <th>献立</th>
+              <td><%= simple_format(food.menu, sanitize: true) %></td>
+            </tr>
+            <tr>
+              <th>アピールポイント</th>
+              <td><%= simple_format(food.point, sanitize: true) %></td>
+            </tr>
+            <tr>
+              <th>投稿日</th>
+              <td><%= food.created_at.strftime('%Y年%m月%d日') %></td>
+            </tr>
+          </table>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
