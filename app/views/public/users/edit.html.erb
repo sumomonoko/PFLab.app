@@ -1,2 +1,41 @@
-<h1>Public::Users#edit</h1>
-<p>Find me in app/views/public/users/edit.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div id="error_explanation">
+    <%= render 'layouts/error_messages', obj: @user %>
+  </div>
+</div>
+
+<div class="container">
+  <div class = "row" >
+    <div class = "col" >
+      <h3 class="float-left font-weight-bold px-3 my-3 rounded-pill">会員情報編集</h3>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "offset-2 float-center col-6">
+      <%= form_with model: @user do |f| %>
+        <table class="table table-borderless">
+          <tr>
+            <th>my画像</th>
+            <td><%= f.file_field :image, accept: "image/*", size: "40x5" %></td>
+          </tr>
+          <tr>
+            <th>名前</th>
+            <td><%= f.text_field :name, size: "40x5" %></td>
+          </tr>
+          <tr>
+            <th>メールアドレス</th>
+            <td><%= f.text_field :emali, value: @user.email, size: "40x5" %></td>
+          </tr>
+          <tr>
+            <th>コメント</th>
+            <td><%= f.text_area :introduction, value: @user.introduction, size: "40x7" %></td>
+          </tr>
+        </table>
+        <div class="row">
+          <%= f.submit '変更を保存', class: 'btn btn-success mx-auto rounded px-4 my-4' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to "マイページに戻る", user_path(@user), class: 'btn btn-secondary mt-5' %>
+</div>
