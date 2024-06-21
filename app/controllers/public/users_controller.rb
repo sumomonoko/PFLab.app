@@ -5,12 +5,6 @@ class Public::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @foods = @user.foods.all
-    # DM機能
-    room = current_user.room_with(@user)
-    if room
-      @is_room = true
-      @room_id = room.id
-    end
   end
 
   def edit
@@ -19,12 +13,7 @@ class Public::UsersController < ApplicationController
 
   def update
     @user = current_user
-    @user.image.attach(params[:user][:image]) if @user.image.blank?
-    if @user.update(user_params)
-      redirect_to user_path(@user)
-    else
-      render :edit
-    end
+    
   end
 
   private
