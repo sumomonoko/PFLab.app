@@ -5,6 +5,13 @@ Rails.application.routes.draw do
     get 'about' => 'homes#about'
     get 'ideal' => 'homes#ideal'
     resources :users, only: [:show, :edit, :update] do
+      member do
+        get :check
+      end
+      collection do
+        # 論理削除用のルーティング
+        patch :withdraw
+      end
       resources :rooms, only: [:create, :show, :index] do
         resources :dms, only: [:create, :destroy]
       end
