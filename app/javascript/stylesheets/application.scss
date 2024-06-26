@@ -1,1 +1,78 @@
 @use '~bootstrap/scss/bootstrap';
+
+/*リンクの形状*/
+#page-top a{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	background:#CD5C5C;
+	border-radius: 5px;
+	width: 70px;
+	height: 60px;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size:0.6rem;
+	transition:all 0.3s;
+}
+
+#page-top a:hover{
+	background: #FFB6C1;
+}
+
+/*リンクを右下に固定*/
+#page-top {
+	position: fixed;
+	right: 40px;
+	bottom:10px;
+	z-index: 2;
+    /*はじめは非表示*/
+	opacity: 0;
+	transform: translateY(100px);
+}
+
+/*　上に上がる動き　*/
+
+#page-top.UpMove{
+	animation: UpAnime 0.5s forwards;
+}
+@keyframes UpAnime{
+  from {
+    opacity: 0;
+	transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+/*　下に下がる動き　*/
+
+#page-top.DownMove{
+	animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+  from {
+  	opacity: 1;
+	transform: translateY(0);
+  }
+  to {
+  	opacity: 1;
+	transform: translateY(100px);
+  }
+}
+
+ .scrollable-table {
+    width: 100%; /* 必要に応じて調整 */
+    height: 400px; /* 表示したい高さに設定 */
+    overflow-y: auto; /* 縦方向にスクロールバーを表示 */
+    border: 1px solid #ccc;
+  }
+
+  .round-img{
+  	border-radius: 50%;
+    width: 30px;
+    margin: 0 10px;
+  }

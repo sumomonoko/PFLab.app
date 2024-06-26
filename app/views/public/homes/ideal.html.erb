@@ -1,2 +1,295 @@
-<h1>Public::Homes#ideal</h1>
-<p>Find me in app/views/public/homes/ideal.html.erb</p>
+<style>
+  h3{
+    background: #F4A460;
+  }
+  .text-basic{
+    background: #F0FFF0;
+  }
+  .text-title{
+    background: #FDF5E6;
+  }
+  .sample-img {
+    width: 150%;
+    hight: 150%;
+  }
+  thead{
+    background: #FFFAFA;
+  }
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3 class="float-left font-weight-bold px-3 my-3 rounded-pill">理想の食事について</h3>
+    </div>
+    <div class="col-md-12">
+      <h5 class="text-danger">理想的な食事を摂るための知識をつけよう!!</h5>
+    </div>
+    <p>&emsp;健康な食生活を送るための栄養素摂取のもととなる日本人の食事摂取基準を満たすための食品や食事バランスについての説明です!</p>
+    <div class="col-md-12">
+      <h4>目次</h4>
+    </div>
+    <ul id="page-link">
+      <li><a href="#area-1">&emsp;食品分類法</a></li>
+      <li><a href="#area-2">&emsp;食事バランスガイド</a></li>
+      <li><a href="#area-3">&emsp;年齢・性別・活動量の違いによる摂取量の目安</a></li>
+    </ul>
+  </div>
+  <section id="area-1">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="font-weight-bold px-3 my-3 text-title rounded-pill">食品分類法</h4>
+      </div>
+        <p>
+          &emsp;私たちは,体に必要な栄養素を毎日食品からとっていますが、一つで全ての栄養素を必要なだけ含んでいる食品はありません。そのため,日常の食生活では,いろいろな食品を上手に組み合わせて食べることが大切になってきます。<br>
+          &emsp;そこで,栄養素をバランスよく摂取するために,どんな食品をどのように組み合わせて食べたら良いかについて,誰にでも覚えられ,実行しやすい方法として<strong>食品分類法</strong>が考案されています。
+        </p>
+      <h5 class="text-primary">3色食品群</h5>
+        <p>
+          &emsp;3色食品群は食品に含まれている栄養素の特徴から,赤色,黄色,緑色の3群に分類したものです。毎食,この各群から<strong>2種類以上の食品</strong>を食べるようにすれば,栄養素のバランスが整った食事になるというものです。(学校給食などの初歩的な栄養指導に利用される)
+        </p>
+        <table class="table table-bordered">
+          <thead class="table-bordered">
+            <tr>
+              <th class='align-middle'>群別</th>
+              <th class='align-middle'>分類</th>
+              <th class='align-middle'>食品</th>
+              <th class='align-middle'>主な栄養素</th>
+            </tr>
+          </thead>
+          <tbody class="table-bordered">
+            <tr>
+              <td class='align-middle text-danger'>赤色群</td>
+              <td class='align-middle'>血液や肉を作るもの</td>
+              <td class='align-middle'>魚介類,肉類,<br>牛乳および乳製品,卵類,豆類</td>
+              <td class='align-middle'>たんぱく質</td>
+            </tr>
+            <tr>
+              <td class='align-middle text-warning'>黄色群</td>
+              <td class='align-middle'>力や体温になるもの</td>
+              <td class='align-middle'>穀類,油脂類,いも類,砂糖類</td>
+              <td class='align-middle'>糖質,脂質</td>
+            </tr>
+            <tr>
+              <td class='align-middle text-success'>緑色群</td>
+              <td class='align-middle'>体の調子を整えるもの</td>
+              <td class='align-middle'>緑黄色野菜,淡色野菜,藻類,きのこ類</td>
+              <td class='align-middle'>ビタミン<br>ミネラル</td>
+            </tr>
+          </tbody>
+        </table>
+      <h5 class="text-primary">四つの食品群</h5>
+        <p>
+          &emsp;四つの食品群は食品に含まれている栄養素の特徴から1~4群に分類したものです。それぞれの群に属する食品の<strong>80kcalに当たる量を1点とし,1~3群から各3点の計9点を摂取</strong>し,4群でエネルギーの調節をするように考えられています。(比較的簡単に栄養価計算ができるため,献立を作成する時に便利である)
+        </p>
+        <table class="table table-bordered">
+          <thead class="table-bordered">
+            <tr>
+              <th class='align-middle'>群別</th>
+              <th class='align-middle'>分類</th>
+              <th class='align-middle'>食品</th>
+              <th class='align-middle'>供給される栄養素</th>
+            </tr>
+          </thead>
+          <tbody class="table-bordered">
+            <tr>
+              <td class='align-middle'>1群</td>
+              <td class='align-middle'>各種の栄養素に富んだ食品</td>
+              <td class='align-middle'>乳・乳製品,卵類</td>
+              <td class='align-middle'>良質たんぱく質,脂質,カルシウム,鉄,<br>ビタミンA・B1・B2など</td>
+            </tr>
+            <tr>
+              <td class='align-middle'>2群</td>
+              <td class='align-middle'>血や肉を作るもの</td>
+              <td class='align-middle'>魚介類,肉類,豆と豆製品</td>
+              <td class='align-middle'>良質たんぱく質,脂質,カルシウム,<br>ビタミンA・B1・B2など</td>
+            </tr>
+            <tr>
+              <td class='align-middle'>3群</td>
+              <td class='align-middle'>体の調子を整えるもの</td>
+              <td class='align-middle'>野菜類,いも類,果物,<br>きのこ類,こんにゃく,藻類</td>
+              <td class='align-middle'>カロテン,ビタミンB1・B2・C,<br>ミネラル,食物繊維など</td>
+            </tr>
+            <tr>
+              <td class='align-middle'>4群</td>
+              <td class='align-middle'>力や体温になるもの</td>
+              <td class='align-middle'>穀類,油脂類,砂糖類,その他</td>
+              <td class='align-middle'>糖質,脂質<br>(穀物はたんぱく質,ビタミンB1・B2,ミネラル)</td>
+            </tr>
+          </tbody>
+        </table>
+      <h5 class="text-primary">六つの基礎食品</h5>
+        <p>
+          &emsp;六つの基礎食品は食品に含まれている栄養素の特徴から1~6群に分類したものです。各群から<strong>少なくとも2~3品以上</strong>を上手に組み合わせると,必要な栄養素をバランスよく摂取することができます。(栄養指導で最もよく利用されている)
+        </p>
+        <table class="table table-bordered">
+          <thead class="table-bordered">
+            <tr>
+              <th class='align-middle'>群別</th>
+              <th class='align-middle'>分類</th>
+              <th class='align-middle'>食品</th>
+              <th class='align-middle'>主な栄養素</th>
+            </tr>
+          </thead>
+          <tbody class="table-bordered">
+            <tr>
+              <td class='align-middle'>1群</td>
+              <td class='align-middle'>・筋肉や骨等を作る<br>・エネルギー源となる</td>
+              <td class='align-middle'>魚,肉,卵,大豆・大豆製品</td>
+              <td class='align-middle'><strong>たんぱく質</strong><br>脂質,ビタミンB2</td>
+            </tr>
+            <tr>
+              <td class='align-middle'>2群</td>
+              <td class='align-middle'>・骨・歯を作る<br>・体の各機能を調節</td>
+              <td class='align-middle'>牛乳,乳製品,海藻,小魚類</td>
+              <td class='align-middle'><strong>ミネラル(カルシウム)</strong><br>たんぱく質,ビタミンB2</td>
+            </tr>
+            <tr>
+              <td class='align-middle'>3群</td>
+              <td class='align-middle'>・皮膚や粘膜の保護<br>・体の各機能を調節</td>
+              <td class='align-middle'>緑黄色野菜</td>
+              <td class='align-middle'><strong>カロテン</strong><br>ミネラル,ビタミンC</td>
+            </tr>
+            <tr>
+              <td class='align-middle'>4群</td>
+              <td class='align-middle'>・体の各機能を調節</td>
+              <td class='align-middle'>淡色野菜,果実類</td>
+              <td class='align-middle'><strong>ビタミンC</strong><br>ミネラル</td>
+            </tr>
+            <tr>
+              <td class='align-middle'>5群</td>
+              <td class='align-middle'>・エネルギー源となる<br>・体の各機能を調節</td>
+              <td class='align-middle'>穀類,いも類,砂糖</td>
+              <td class='align-middle'><strong>炭水化物</strong><br>ビタミンB1</td>
+            </tr>
+            <tr>
+              <td class='align-middle'>6群</td>
+              <td class='align-middle'>・エネルギー源となる</td>
+              <td class='align-middle'>油脂類,脂肪の多い食品</td>
+              <td class='align-middle'><strong>脂質</strong><br>ビタミンA,ビタミンD</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </section>
+  <section id="area-2">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="font-weight-bold px-3 my-3 text-title rounded-pill">食事バランスガイド</h4>
+      </div>
+      <div class="col-md-3">
+        <%= image_tag asset_path("balance_guide.jpg"), class: "sample-img" %>
+        <p class="text-right">↑バランスガイド</p>
+      </div>
+      <div class="col-md-8 offset-md-1 pt-4">
+        <p>
+          &emsp;2000年に現在の厚生労働省、農林水産省が連携して作成したものです。<br>
+          &emsp;食事バランスガイドでは、食事の望ましい組み合わせやおおよその量をコマに見立ててわかりやすくイラストで示されています。<br>
+          &emsp;さらに毎日の食事を主食、副菜、主菜、牛乳・乳製品、果物の5つに分け、1日にそれぞれをどれだけ食べれば良いかが示されています。</p>
+        <h5 class="text-primary">主食</h5>
+        <p>
+          &emsp;主に炭水化物(糖質)の供給源であるごはん,パン,麺,パスタなどを主材料とする料理が含まれる。<br>(1つ(SV)＝主材料に由来する炭水化物約40g)
+        </p>
+        <h5 class="text-primary">副菜</h5>
+        <p>
+          &emsp;主にビタミン,ミネラル,食物繊維の供給源である野菜,いも,豆類(大豆を除く),きのこ,海藻などを主材料とする料理が含まれる。<br>(1つ(SV)＝主材料の重量約70g)
+        </p>
+        <h5 class="text-primary">主菜</h5>
+        <p>
+          &emsp;主にたんぱく質の供給源である肉,魚,卵,大豆および大豆製品などを主材料とする料理が含まれる。<br>(1つ(SV)＝主材料に由来するたんぱく質約6g)
+        </p>
+        <h5 class="text-primary">牛乳・乳製品</h5>
+        <p>
+          &emsp;主にカルシウムの供給源である牛乳,ヨーグルト,チーズなどが含まれる。<br>(1つ(SV)＝主材料に由来するカルシウム約100mg)
+        </p>
+        <h5 class="text-primary">果物</h5>
+        <p>
+          &emsp;主にビタミンC,カリウムなどの供給源であるりんご,みかんなどの果実およびすいか,いちごなどの果実的な野菜が含まれる。<br>(1つ(SV)＝主材料の重量約100g)
+        </p>
+        <h5 class="text-primary">水・お茶</h5>
+        <p>
+          &emsp;水・お茶といった水分は食事の中で欠かせないものであり,料理,飲料として食事や食間などに十分量をとる必要があることから象徴的なイメージのコマの軸として表現している。
+        </p>
+        <h5 class="text-primary">運動</h5>
+        <p>
+          &emsp;「コマが回転する」＝「運動する」ことによって初めて安定することを表現している。栄養バランスの取れた食事をとること,適度な運動をすることは,健康づくりにとってとても大切なことである。
+        </p>
+        <h5 class="text-primary">菓子・嗜好飲料(しこういんりょう)</h5>
+        <p>
+          &emsp;菓子・嗜好飲料は食生活の中で楽しみとして捉えられ,食事全体の中で適度にとる必要があることから,イラスト上ではコマを回すためのヒモとして表現し,「楽しく適度に」というメッセージが付いている。(1日200kcal程度を目安にする)
+        </p>
+      </div>
+    </div>
+  </section>
+  <section id="area-3">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="font-weight-bold px-3 my-3 text-title rounded-pill">年齢・性別・活動量の違いによる摂取量の目安</h4>
+      </div>
+      <div class="col text-right">
+        <h6 class="text-success">※基本形(表の緑の囲い部分)</h6>
+      </div>
+      <table class="table table-bordered">
+        <thead class="table-bordered">
+          <tr>
+            <th class='align-middle'>男性</th>
+            <th class='align-middle'>エネルギー<br>(kcal)</th>
+            <th class='align-middle'>主食</th>
+            <th class='align-middle'>副菜</th>
+            <th class='align-middle'>主菜</th>
+            <th class='align-middle'>牛乳・<br>乳製品</th>
+            <th class='align-middle'>果物</th>
+            <th class='align-middle'>女性</th>
+          </tr>
+        </thead>
+        <tbody class="table-bordered">
+          <tr>
+            <td class='align-middle'>6~9才,<br>70才以上<br>(活動量低い)</td>
+            <td class='align-middle'>1,400~2,000</td>
+            <td class='align-middle'>4~5</td>
+            <td class='align-middle'>5~6</td>
+            <td class='align-middle'>3~4</td>
+            <td class='align-middle'>2(2~3)※2</td>
+            <td class='align-middle'>2</td>
+            <td class='align-middle'>6~11才,<br>70才以上,<br>12~17才18~69才<br>(活動量低い)</td>
+          </tr>
+          <tr>
+            <td class='align-middle'>10~11才,<br>12~17才18~69才<br>(活動量低い),<br>70才以上<br>(活動量普通以上)</td>
+            <td class='align-middle text-basic'>2,200±200</td>
+            <td class='align-middle text-basic'>5~7</td>
+            <td class='align-middle text-basic'>5~6</td>
+            <td class='align-middle text-basic'>3~5</td>
+            <td class='align-middle text-basic'>2(2~3)※2</td>
+            <td class='align-middle text-basic'>2</td>
+            <td class='align-middle'>12~17才18~69才<br>(活動量普通以上)</td>
+          </tr>
+          <tr>
+            <td class='align-middle'>12~17才18~69才<br>(活動量普通以上)</td>
+            <td class='align-middle'>2,400~3,000</td>
+            <td class='align-middle'>6~8</td>
+            <td class='align-middle'>6~7</td>
+            <td class='align-middle'>4~6</td>
+            <td class='align-middle'>2~3<br>(2~4)※2</td>
+            <td class='align-middle'>2~3</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="col-md-12">
+        <h5 class="text-danger"><表の注意></h5>
+      </div>
+      <p>・単位：つ(SV)&emsp;＊SVとはサービング(食事の提供量)の略</p>
+      <p>
+        ・身体活動量の見方<br>
+        &emsp;「低い」: 生活の大部分が座位の場合<br>
+        &emsp;「普通以上」: 座位中心だが,仕事,家事,通勤,余暇での歩行や立位作業を含む場合,または歩行や立位作業が多い場合や活発な運動習慣を持っている場合(「低い」に当てはまらない場合)<br>
+        &emsp;＊強いスポーツ等を行っている場合には,さらに多くのエネルギーを必要とするので,身体活動のレベルに応じて適宜必要量を摂取する。
+      </p>
+      <p>
+        ・※2: 学校給食を含めた子供向け摂取目安について<br>
+        &emsp;成長期に特に必要なカルシウムを十分にとるためにも,少し幅を持たせて1日2~3つ(SV),あるいは「基本形」よりもエネルギー量が多い場合では,4つ程度までを目安にするのが適当である。
+      </p>
+      <p>・成長期で身体活動レベルが特に高いまたは低い場合は,主食,副菜,主菜について,必要に応じてSV数を増減させることで適宜対応する。</p>
+      <p>・肥満(成人でBMI≧25)の場合には,体重や腹囲の変化を見ながら適宜「摂取の目安」のランクを1つ下げることを考慮する。</p>
+    </div>
+  </div>
+</section>
