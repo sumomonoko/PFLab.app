@@ -29,6 +29,12 @@
           <td><%= simple_format(@food.point, sanitize: true)  %></td>
         </tr>
         <tr>
+          <th></th>
+          <td id="favorite_btn_<%= @food.id %>">
+            <%= render "public/favorites/btn", food: @food %>
+          </td>
+        </tr>
+        <tr>
           <% if @food.user == current_user %>
             <td><%= link_to "編集する", edit_food_path(@food.id), class: 'btn btn-sm btn-success' %></td>
             <td><%= link_to "削除する", food_path(@food.id), method: :delete, "data-confirm" => "本当に消しますか?", class: 'btn btn-sm btn-danger' %></td>
