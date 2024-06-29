@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_one_attached :image
   has_many :foods, dependent: :destroy
   has_many :favorites, dependent: :destroy
+   has_many :food_comments, dependent: :destroy
 
   def get_image(width, height)
     unless image.attached?
@@ -15,4 +16,7 @@ class User < ApplicationRecord
     end
     image.variant(resize_to_limit: [width, height]).processed
   end
+
+  validates :name, presence: true
+  validates :email, presence: true
 end

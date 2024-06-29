@@ -4,6 +4,7 @@ class Food < ApplicationRecord
   belongs_to :genre, optional:true
 
   has_many :favorites, dependent: :destroy
+  has_many :food_comments, dependent: :destroy
 
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
@@ -16,4 +17,8 @@ class Food < ApplicationRecord
     end
     image.variant(resize_to_limit: [width, height]).processed
   end
+
+  validates :title, presence: true
+  validates :menu, presence: true
+  validates :genre_id, presence: true
 end
