@@ -1,7 +1,7 @@
 class Public::FoodsController < ApplicationController
   before_action :authenticate_user!
   before_action :is_matching_login_user, only: [:update, :destroy, :edit]
-  
+
   def new
     @food = Food.new
   end
@@ -16,13 +16,13 @@ class Public::FoodsController < ApplicationController
     @food = Food.find(params[:id])
     @user = @food.user
     @users = User.find(params[:id])
-    
+    @food_comment = FoodComment.new
   end
 
   def edit
     @food = Food.find(params[:id])
   end
-  
+
   def create
     @food = Food.new(food_params)
     @food.user_id = current_user.id
@@ -33,7 +33,7 @@ class Public::FoodsController < ApplicationController
       render :new
     end
   end
-  
+
   def update
     @food = Food.find(params[:id])
     if @food.update(food_params)

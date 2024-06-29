@@ -41,6 +41,10 @@
           <% end %>
         </tr>
       </table>
+      <div id="comment_index_<%= @food.id %>">
+        <%= render "public/food_comments/index", food: @food %>
+      </div>
+      <%= render "public/food_comments/form", food: @food, food_comment: @food_comment %>
     </div>
   </div>
   <%= link_to "ホームに戻る", foods_path, class: 'btn btn-secondary mt-5' %>
