@@ -21,4 +21,12 @@ class Food < ApplicationRecord
   validates :title, presence: true
   validates :menu, presence: true
   validates :genre_id, presence: true
+
+  def self.looks(word)
+    if word.present?
+      @food = Food.where("title LIKE?","%#{word}%")
+    else
+      @food = Food.all
+    end
+  end
 end
