@@ -19,4 +19,12 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true
+
+  def self.looks(word)
+    if word.present?
+      @user = User.where("name LIKE?","%#{word}%")
+    else
+      @user = User.all
+    end
+  end
 end
